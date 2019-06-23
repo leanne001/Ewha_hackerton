@@ -1,0 +1,29 @@
+<head>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        </style>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <h1>login</h1>
+
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        ID:
+        <br>
+        <input name="ID" type="text">
+        <br>
+        Password:
+        <br>
+        <input name="password" type="password">
+        <br>
+        <br>
+        <input type="submit" class="btn btn-primary" value="login">
+        </form>
+    </div>
+{% endblock %}
+</body>

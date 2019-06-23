@@ -1,0 +1,125 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        .form-control{
+          width: 150px;
+          text-align : center;
+          margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+{% block content %}
+<div class="containter">
+    <h1> Sign Up! </h1>
+
+    <form method="POST" action ="{%url 'signup' %}">
+        {% csrf_token %}
+        ID :
+        <br>
+        <input name="ID" type="text">
+        <br>
+        Password :
+        <br>
+        <input name="password1" type="password">
+        <br>
+        Confirm Password :
+        <br>
+        <input name="password2" type="password">
+        <br>
+        학번 : 
+        <br>
+        <select class="form-control form-control-sm">
+          <option>19</option>
+          <option>18</option>
+          <option>17</option>
+          <option>16</option>
+          <option>15</option>
+          <option>14</option>
+          <option>13 이하</option>
+        </select>
+        <br>
+        학과 :
+        <br>
+        <select class="form-control form-control-sm">
+          <option>국어국문학과</option>
+          <option>중어중문학과</option>
+          <option>불어불문학과</option>
+          <option>독어독문학과</option>
+          <option>사학과</option>
+          <option>철학과</option>
+          <option>기독교학과</option>
+          <option>영어영문학부</option>
+          <option>정치외교학과</option>
+          <option>행정학과</option>
+          <option>경제학과</option>
+          <option>문헌정보학과</option>
+          <option>사회학과</option>
+          <option>사회복지학과</option>
+          <option>심리학과</option>
+          <option>소비자학과</option>
+          <option>커뮤니케이션-미디어학부</option>
+          <option>수학과</option>
+          <option>통계학과</option>
+          <option>물리학과</option>
+          <option>화학생명분자과학부</option>
+          <option>소프트웨어학부</option>
+          <option>차세대미래공학부</option>
+          <option>미래사회공학부</option>
+          <option>휴먼기계바이오공학부</option>
+          <option>건반악기과</option>
+          <option>관현악과</option>
+          <option>성악과</option>
+          <option>작곡과</option>
+          <option>한국음악과</option>
+          <option>무용과</option>
+          <option>조형예술학부</option>
+          <option>디자인학부</option>
+          <option>섬유패션학부</option>
+          <option>교육학과</option>
+          <option>유아교육학과</option>
+          <option>초등교육과</option>
+          <option>교육공학과</option>
+          <option>특수교육과</option>
+          <option>영어교육과</option>
+          <option>사회과교육과</option>
+          <option>국어교육과</option>
+          <option>과학교육과</option>
+          <option>수학교육과</option>
+          <option>영영학부</option>
+          <option>융합콘텐츠학과</option>
+          <option>의류산업학과</option>
+          <option>국제사무학과</option>
+          <option>체육과학부</option>
+          <option>식품영양학과</option>
+          <option>융합보건학과</option>
+          <option>의예과</option>
+          <option>의학과</option>
+          <option>간호학부</option>
+          <option>약학과</option>
+          <option>스크랜튼학부</option>
+          <option>융합학부</option>
+          <option>국제학부</option>
+          <option>호크마교양대학</option>
+        </select>
+        <br>
+        번호 or 카카오톡 ID :
+        <br>
+        <input name="number" type="text">
+        <br>
+        선호 메뉴 :
+        <br>
+        <input name="menu" type="text">
+        <br><br>
+        <input type="submit" class="btn btn-secondary" value="Sign Up">
+    </form>
+</div>
+{% endblock %}
+</body>
