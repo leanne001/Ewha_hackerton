@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+    <style>
+        h1{
+            background-color:#ffc52f;
+            color: whitesmoke;
+            width: 290px;
+            height: 50px;
+            font-family: 'Do Hyeon', sans-serif;
+            text-align : center;
+            margin: 0 auto;
+        }
+        body{
+            text-align: center;
+            background-color: #003127;
+            margin: 0 auto;
+            position:absolute; 
+            top:17%; left:50%;
+            margin-top:-100px; margin-left:-100px; 
+            width:200px; height:200px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .card-title{
+            color: #003127;
+            font-family: 'Noto Sans KR', sans-serif; 
+            font-weight: bolder;
+        }
+        .card-text{
+            font-family: 'Noto Sans KR', sans-serif; 
+            color: #00462a;
+            font-weight: bolder;
+        }
+        .card-body{
+            border: solid 5px #ffc52f;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>사용자 목록</h1>
+    <br>
+    {% for profile in profiles.all %}
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ profile.studentid }}</h5>
+                    <p class="card-text">{{ profile.major  }}</p>
+                    <p class="card-text"> {{ profile.menu  }}</p>
+                        <a href="#" class="btn btn-danger">요청하기</a>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+</body>          

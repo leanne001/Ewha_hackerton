@@ -3,123 +3,161 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <style>
+        h1{
+            background-color: #003127;
+            color: #FFF8DC;
+            width: 300px;
+            height: 55px;
+            text-align : center;
+            margin: 0 auto;
+            text-transform: capitalize;
+        }
         body{
             text-align: center;
-        }
+            font-family: 'Noto Sans KR', sans-serif;
+          }
         .form-control{
           width: 150px;
           text-align : center;
           margin: 0 auto;
+        }
+        input {
+          padding: 5px 20px;
+          margin: 5px 0;
+          box-sizing: border-box;
+          border: none;
+          background-color: #FFF8DC;
+          color: #003127;
+        }
+        input[type="text"] {
+          border: solid 3px #00462a;
+          border-radius: 15px;
+        }
+        input[type="password"] {
+          border: solid 3px #00462a;
+          border-radius: 15px;
+        }
+        input[type="submit"] {
+         background-color: #00462a;
+         color: #FFF8DC;  
+         text-transform: capitalize;
         }
     </style>
 
 </head>
 <body>
 {% block content %}
-<div class="containter">
-    <h1> Sign Up! </h1>
 
-    <form method="POST" action ="{%url 'signup' %}">
+<div class="containter">
+  <h1> Sign Up! </h1>
+  <br>
+      <form method="POST" action ="{% url 'signup' %}">
         {% csrf_token %}
-        ID :
+        ID : 
         <br>
         <input name="ID" type="text">
         <br>
-        Password :
+        <br>
+        Password : 
         <br>
         <input name="password1" type="password">
+        <br>
         <br>
         Confirm Password :
         <br>
         <input name="password2" type="password">
         <br>
+        <br>
         학번 : 
         <br>
-        <select class="form-control form-control-sm">
-          <option>19</option>
-          <option>18</option>
-          <option>17</option>
-          <option>16</option>
-          <option>15</option>
-          <option>14</option>
-          <option>13 이하</option>
+        <select class="form-control form-control-sm" name="studentid">
+          <option value="19">19</option>
+          <option value="18">18</option>
+          <option value="17">17</option>
+          <option value="16">16</option>
+          <option value="15">15</option>
+          <option value="14">14</option>
+          <option value="13">13</option>
         </select>
         <br>
         학과 :
         <br>
-        <select class="form-control form-control-sm">
-          <option>국어국문학과</option>
-          <option>중어중문학과</option>
-          <option>불어불문학과</option>
-          <option>독어독문학과</option>
-          <option>사학과</option>
-          <option>철학과</option>
-          <option>기독교학과</option>
-          <option>영어영문학부</option>
-          <option>정치외교학과</option>
-          <option>행정학과</option>
-          <option>경제학과</option>
-          <option>문헌정보학과</option>
-          <option>사회학과</option>
-          <option>사회복지학과</option>
-          <option>심리학과</option>
-          <option>소비자학과</option>
-          <option>커뮤니케이션-미디어학부</option>
-          <option>수학과</option>
-          <option>통계학과</option>
-          <option>물리학과</option>
-          <option>화학생명분자과학부</option>
-          <option>소프트웨어학부</option>
-          <option>차세대미래공학부</option>
-          <option>미래사회공학부</option>
-          <option>휴먼기계바이오공학부</option>
-          <option>건반악기과</option>
-          <option>관현악과</option>
-          <option>성악과</option>
-          <option>작곡과</option>
-          <option>한국음악과</option>
-          <option>무용과</option>
-          <option>조형예술학부</option>
-          <option>디자인학부</option>
-          <option>섬유패션학부</option>
-          <option>교육학과</option>
-          <option>유아교육학과</option>
-          <option>초등교육과</option>
-          <option>교육공학과</option>
-          <option>특수교육과</option>
-          <option>영어교육과</option>
-          <option>사회과교육과</option>
-          <option>국어교육과</option>
-          <option>과학교육과</option>
-          <option>수학교육과</option>
-          <option>영영학부</option>
-          <option>융합콘텐츠학과</option>
-          <option>의류산업학과</option>
-          <option>국제사무학과</option>
-          <option>체육과학부</option>
-          <option>식품영양학과</option>
-          <option>융합보건학과</option>
-          <option>의예과</option>
-          <option>의학과</option>
-          <option>간호학부</option>
-          <option>약학과</option>
-          <option>스크랜튼학부</option>
-          <option>융합학부</option>
-          <option>국제학부</option>
-          <option>호크마교양대학</option>
+        <select class="form-control form-control-sm" name="major">
+          <option value="국어국문학과">국어국문학과</option>
+          <option value="중어중문학과">중어중문학과</option>
+          <option value="불어불문학과">불어불문학과</option>
+          <option value="독어독문학과">독어독문학과</option>
+          <option value="사학과">사학과</option>
+          <option value="철학과">철학과</option>
+          <option value="기독교학과">기독교학과</option>
+          <option value="영어영문학부">영어영문학부</option>
+          <option value="정치외교학과">정치외교학과</option>
+          <option value="행정학과">행정학과</option>
+          <option value="경제학">경제학과</option>
+          <option value="문헌정보학과">문헌정보학과</option>
+          <option value="사회학과">사회학과</option>
+          <option value="사회복지학과">사회복지학과</option>
+          <option value="심리학과">심리학과</option>
+          <option value="소비자학과">소비자학과</option>
+          <option value="커미학부">커뮤니케이션-미디어학부</option>
+          <option value="수학과">수학과</option>
+          <option value="통계학과">통계학과</option>
+          <option value="물리학과">물리학과</option>
+          <option value="화학생명분자과학부">화학생명분자과학부</option>
+          <option value="소프트웨어학부">소프트웨어학부</option>
+          <option value="차세대미래공학부">차세대미래공학부</option>
+          <option value="미래사회공학부">미래사회공학부</option>
+          <option value="휴먼기계바이오공학부">휴먼기계바이오공학부</option>
+          <option value="건반악기과">건반악기과</option>
+          <option value="관현악과">관현악과</option>
+          <option value="성악과">성악과</option>
+          <option value="작곡과">작곡과</option>
+          <option value="한국음악과">한국음악과</option>
+          <option value="무용과">무용과</option>
+          <option value="조형예술학부">조형예술학부</option>
+          <option value="디자인학부">디자인학부</option>
+          <option value="섬유패션학부">섬유패션학부</option>
+          <option value="교육학과">교육학과</option>
+          <option value="유아교육학과">유아교육학과</option>
+          <option value="초등교육과">초등교육과</option>
+          <option value="교육공학과">교육공학과</option>
+          <option value="특수교육과">특수교육과</option>
+          <option value="영어교육과">영어교육과</option>
+          <option value="사회과교육과">사회과교육과</option>
+          <option value="국어교육과">국어교육과</option>
+          <option value="과학교육과">과학교육과</option>
+          <option value="수학교육과">수학교육과</option>
+          <option value="영영학부">영영학부</option>
+          <option value="융합콘텐츠학과">융합콘텐츠학과</option>
+          <option value="의류산업학과">의류산업학과</option>
+          <option value="국제사무학과">국제사무학과</option>
+          <option value="체육과학부">체육과학부</option>
+          <option value="식품영양학과">식품영양학과</option>
+          <option value="융합보건학과">융합보건학과</option>
+          <option value="의예과">의예과</option>
+          <option value="의학과">의학과</option>
+          <option value="간호학부">간호학부</option>
+          <option value="약학과">약학과</option>
+          <option value="스크랜튼학부">스크랜튼학부</option>
+          <option value="융합학부">융합학부</option>
+          <option value="국제학부">국제학부</option>
+          <option value="호크마교양대학">호크마교양대학</option>
         </select>
         <br>
         번호 or 카카오톡 ID :
         <br>
-        <input name="number" type="text">
+        <input name="contact" type="text" name="contact">
+        <br>
         <br>
         선호 메뉴 :
         <br>
-        <input name="menu" type="text">
+        <input name="menu" type="text" name="menu"> 
         <br><br>
         <input type="submit" class="btn btn-secondary" value="Sign Up">
     </form>
+  </form>
 </div>
 {% endblock %}
 </body>

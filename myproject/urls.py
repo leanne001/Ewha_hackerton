@@ -26,4 +26,5 @@ urlpatterns = [
     path('', app1.views.home, name='home'),
     path('login/', app1.views.login, name='login'),
     path('signup/', app1.views.signup, name='signup'),
+    path('userlist/', app1.views.userlist, name='userlist'),
 ]

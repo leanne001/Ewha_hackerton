@@ -5,22 +5,92 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
     <style>
         body{
             text-align: center;
             margin: 0 auto;
+            background-color: #00462a;
         }
 
-        .grid-item{
+        .title{
             font-family: 'Do Hyeon', sans-serif;
             font-size: 100px;
+            color: whitesmoke;
         }
+
+        a:link, a:visited {
+			background-color: #ffc52f;
+            color: white;
+            font-family: 'Jua', sans-serif;
+			padding: 10px 20px;
+			text-align: center;	
+			text-decoration: none;
+			display: inline-block;
+		}
+        a:hover, a:active { background-color: #ff7231; }
+        
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(8, 20px);
+            grid-template-rows: repeat(5, 40px);
+            border: #00462a;
+            padding: 5%;
+            grid-row-gap: 20px;
+        }
+
+        .btn{
+            width: 10%;
+            height: 7%;
+        }
+
+
     </style>
 </head>
 <body>
-    <div class="grid-item">이 화 맛 남</div>
+    <div class="title">이 화 맛 남</div>
     </div>
     <img src="https://image.flaticon.com/icons/svg/940/940643.svg" alt = "LOGIN" width="200" height="200" display="inline-block">
+    <br>
+    <div class="wrapper">
+        <button type="button" class="btn btn-success">월</button>
+        <button type="button" class="btn btn-success">화</button>
+        <button type="button" class="btn btn-success">수</button>
+        <button type="button" class="btn btn-success">목</button>
+        <button type="button" class="btn btn-success">금</button>
+        <br>
+        {% for i in "x"|rjust:"7" %}
+            {% for i in "x"|rjust:"5" %}
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+            </button>
+  
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">CHOOSE!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    선택 해주세요!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" onclick = "location.href = 'userlist'"> 식 사 </button>
+                        <button type="button" class="btn btn-success" onclick = "location.href = 'userlist'"> 카 페 </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </div>
+
+    <br>
     <div class="navbar">
         <a class="nav-item nav-link" href="{% url 'login' %}">로그인</a>
         <br>
